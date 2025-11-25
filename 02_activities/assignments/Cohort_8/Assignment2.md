@@ -54,7 +54,14 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+The first proposed architecture is Type 2, which will track historical data by creating multiple
+records for a given natural key in the dimensional tables with separate surrogate keys and/or
+different version numbers. Unlimited history is preserved for each insert. Howvever, this approach
+requires more effort to maintain. Hence, Type 2 Slowly Changing Dimensions (SCD) are not a good
+choice if the dimensional model is subject to frequent change.
+
+The second proposed architecture is Type 1, which will overwrite old data with new, and hence not
+track historical data. However, this architecture is easier to maintain.
 ```
 
 ***
